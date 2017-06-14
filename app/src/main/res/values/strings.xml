@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Bricole</string>
+    <string name="user_description">Bat ab Euphrate brevi spatio disparatur, refertum mercatoribus opulentis</string>
+    <string name="user_name">Yacine Boulyali</string>
+    <string name="projects">35 Projects</string>
+    <string name="user_city">Temara</string>
+    <string name="ratings">12 Ratings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_user_profile">user_profile</string>
+    <string name="title_activity_aaa">aaa</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_profile_">Profile</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="setting">Setting</string>
+    <string name="settingss">Settings</string>
+    <string name="ouvrier">Ouvrier</string>
+    <string name="btn_next">Next</string>
+    <string name="title_activity_sms_verification">SmsVerificationActivity</string>
+    <string name="msg_verification_sms">bricole will be send sms verification</string>
+    <string name="accept_and_continus">Accept and Continus</string>
+    <string name="licens_guid">cd jd,ndf,f jkhdjkhsd jkhdskjhdskjd</string>
+</resources>

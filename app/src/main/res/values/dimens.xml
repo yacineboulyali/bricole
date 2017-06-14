@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="user_description_txt_size">5pt</dimen>
+    <dimen name="projects_txt_size">8.5pt</dimen>
+    <dimen name="ratings_txt_size" type="float">8.5pt</dimen>
+    <dimen name="user_name_txt_size">13pt</dimen>
+    <dimen name="user_cty_txt_hdpi">12pt</dimen>
+    <dimen name="user_projects_txt_size">12dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>
