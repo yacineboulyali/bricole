@@ -21,12 +21,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </ScrollView>
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -122,7 +116,7 @@
 
 
                     <TextView
-                        android:id="@+id/user_name"
+                        android:id="@+id/verticalSpacing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -190,7 +184,7 @@
                     android:columnWidth="30dp"
                     android:horizontalSpacing="30dp"
                     android:numColumns="3"
-                    android:verticalSpacing="5dp"
+                    android:verticalSpacing="@dimen/GridView_verticalSpacing"
                     tools:ignore="NestedScrolling"
 
                     />
