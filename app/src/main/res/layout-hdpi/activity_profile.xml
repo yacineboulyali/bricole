@@ -21,18 +21,9 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/call_icon_24dp"
-        app:layout_anchor="@+id/linearLayout"
-        app:layout_anchorGravity="bottom|right" />
-
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -144,22 +135,23 @@
                         android:orientation="horizontal"
                         android:paddingLeft="100dp"
                         android:paddingRight="100dp"
+                        android:weightSum="1"
                         tools:ignore="DuplicateIds,UseCompoundDrawables">
 
                         <ImageView
                             android:id="@+id/imageView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:contentDescription=""
                             app:srcCompat="@drawable/user_city_icon"
-                            tools:ignore="ContentDescription,VectorDrawableCompat" />
+                            tools:ignore="ContentDescription,VectorDrawableCompat"
+                            android:layout_weight="0.15" />
 
                         <TextView
                             android:id="@+id/user_city"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="5"
+                            android:layout_weight="0.16"
                             android:gravity="center"
                             android:text="@string/user_city"
                             android:textSize="9pt"
@@ -189,10 +181,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:columnWidth="30dp"
-                    android:horizontalSpacing="8dp"
-                    android:numColumns="5"
-                    android:verticalSpacing="8dp"
+                    android:columnWidth="10dp"
+                    android:horizontalSpacing="30dp"
+                    android:numColumns="3"
+                    android:verticalSpacing="5dp"
                     tools:ignore="NestedScrolling"
 
                     />
@@ -203,5 +195,16 @@
 
 
     </LinearLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/call_icon_24dp"
+        app:layout_anchor="@+id/linearLayout"
+        app:layout_anchorGravity="bottom|right" />
 
 </android.support.design.widget.CoordinatorLayout>
