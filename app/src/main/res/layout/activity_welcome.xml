@@ -85,7 +85,7 @@
             android:layout_weight="1"
             android:background="@color/colorAccent"
             android:text="@string/btn_next"
-            android:textColor="@color/action_bar"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="8pt"
             tools:ignore="InefficientWeight,NestedWeights" />
     </LinearLayout>
