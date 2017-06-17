@@ -34,6 +34,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -63,7 +64,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             initMap();
 
         } else {
-
+            initMap();
         }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -288,7 +289,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
            // double lat = location.getLatitude();
             //double ln = location.getLongitude();
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ll,13));
+            //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ll,13));
+            CameraPosition cameraPosition = new CameraPosition.Builder().target(ll).zoom(13).build();
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+            //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ll, 13.5f), 3000, null);
 
             // goToLocationZoom(lat, ln,12);
             //place marker at current position
