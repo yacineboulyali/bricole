@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.katepratik.msg91api.MSG91;
 
 import java.io.BufferedReader;
 import java.io.IOException;
