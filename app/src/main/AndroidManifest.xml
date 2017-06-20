@@ -62,7 +62,9 @@
         <activity
             android:name=".ProfileActivity"
             android:label="@string/title_activity_profile_activty"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme">
+
+        </activity>
     </application>
 
 </manifest>

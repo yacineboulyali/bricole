@@ -12,7 +12,7 @@ import android.widget.GridView;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    GridView gridView;
+    //GridView gridView;
 
 
     @Override
