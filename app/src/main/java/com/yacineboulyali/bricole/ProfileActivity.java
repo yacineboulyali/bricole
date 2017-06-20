@@ -1,12 +1,14 @@
 package com.yacineboulyali.bricole;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -80,26 +82,35 @@ public class ProfileActivity extends AppCompatActivity {
 
         double density = getResources().getDisplayMetrics().density ;
 
-        if (density==ldpi){
-            gridView.setNumColumns(2);
 
-        }else if (density==mdpi){
 
-        }else if (density==hdpi){
 
-        }else if (density==xhdpi){
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            if (density==ldpi){
+                gridView.setNumColumns(2);
 
-        }else if (density==xxhdpi){
+            }else if (density==mdpi){
 
-        }else if (density==xxxhdpi){
-            gridView.setNumColumns(4);
+            }else if (density==hdpi){
 
+            }else if (density==xhdpi){
+
+            }else if (density==xxhdpi){
+
+            }else if (density==xxxhdpi){
+                gridView.setNumColumns(4);
+
+            }
+            Toast.makeText(getApplicationContext(),String.valueOf(density),Toast.LENGTH_SHORT).show();
+        }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            gridView.setNumColumns(5);
+
+
+            if(density==mdpi){
+                gridView.setNumColumns(4);
+            }
 
         }
-        Toast.makeText(getApplicationContext(),String.valueOf(density),Toast.LENGTH_SHORT).show();
-
-
-
 
 
 
