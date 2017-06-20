@@ -24,7 +24,7 @@
             android:text="@string/msg_verification_sms"
             android:textSize="7pt"
             tools:ignore="InefficientWeight,NestedWeights"
-            tools:text="bricole will send you sms to your nember " />
+            tools:text="bricole will send an sms to your number " />
 
         <LinearLayout
             android:layout_width="match_parent"

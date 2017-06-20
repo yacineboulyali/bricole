@@ -24,6 +24,12 @@ public class GridImageAdapter extends BaseAdapter {
             R.drawable.yacine,
             R.drawable.yacine,
             R.drawable.yacine,
+            R.drawable.yacine,
+            R.drawable.yacine,
+            R.drawable.yacine,
+            R.drawable.yacine,
+            R.drawable.yacine,
+            R.drawable.yacine,
             R.drawable.yacine
     };
 

@@ -29,6 +29,8 @@
         app:srcCompat="@drawable/search_black_24dp"
         tools:ignore="VectorDrawableCompat" />
 
-    <include layout="@layout/content_activity_profile" />
+    <include
+        layout="@layout/content_activity_profile"
+        android:layout_width="match_parent" />
 
 </android.support.design.widget.CoordinatorLayout>
