@@ -91,8 +91,8 @@ public class ProfileActivity extends AppCompatActivity {
         }else if (density==xxhdpi){
 
         }else if (density==xxxhdpi){
+            gridView.setNumColumns(4);
 
-            Toast.makeText(getApplicationContext(),String.valueOf(density),Toast.LENGTH_SHORT).show();
 
         }
         Toast.makeText(getApplicationContext(),String.valueOf(density),Toast.LENGTH_SHORT).show();
