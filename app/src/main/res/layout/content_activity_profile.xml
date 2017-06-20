@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.yacineboulyali.bricole.ProfileActivity"
-    tools:showIn="@layout/activity_profile">s
+    tools:showIn="@layout/activity_profile"
+    tools:ignore="ExtraText">s
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="0dp"
