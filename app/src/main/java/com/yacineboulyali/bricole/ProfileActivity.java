@@ -6,11 +6,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 /**
  * Created by Yacine on 19/06/2017.
@@ -19,6 +21,18 @@ import android.widget.GridView;
 public class ProfileActivity extends AppCompatActivity {
 
     GridView gridView;
+
+
+    public float ldpi;
+    public float mdpi;
+    public float hdpi;
+    public float xhdpi;
+    public float xxhdpi;
+    public float xxxhdpi;
+
+
+
+
 
 
     @Override
@@ -53,6 +67,45 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
+
+
+        ldpi= (float) 0.75;
+        mdpi= (float) 1.0;
+        hdpi= (float) 1.5;
+        xhdpi= (float) 2.0;
+        xxhdpi= (float) 3.0;
+        xxxhdpi= (float) 4.0;
+
+
+        double density = getResources().getDisplayMetrics().density ;
+
+        if (density==ldpi){
+            gridView.setNumColumns(2);
+
+        }else if (density==mdpi){
+
+        }else if (density==hdpi){
+
+        }else if (density==xhdpi){
+
+        }else if (density==xxhdpi){
+
+        }else if (density==xxxhdpi){
+
+            Toast.makeText(getApplicationContext(),String.valueOf(density),Toast.LENGTH_SHORT).show();
+
+        }
+        Toast.makeText(getApplicationContext(),String.valueOf(density),Toast.LENGTH_SHORT).show();
+
+
+
+
+
+
+
+
+
+
 
     }
 
