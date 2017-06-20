@@ -30,7 +30,7 @@
         android:layout_weight="0.16"
         android:gravity="center"
         android:text="@string/user_city"
-        android:textSize="9pt"
+        android:textSize="@dimen/user_city_txt"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/imageView6"
         app:layout_constraintRight_toLeftOf="@+id/guideline8"
