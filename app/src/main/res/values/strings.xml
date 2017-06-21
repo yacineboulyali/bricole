@@ -5,7 +5,6 @@
     <string name="projects">35 Projects</string>
     <string name="user_city">Temara</string>
     <string name="ratings">12 Ratings</string>
-    <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_user_profile">user_profile</string>
     <string name="title_activity_aaa">aaa</string>
     <string name="title_activity_profile">Profile</string>
@@ -21,4 +20,8 @@
     <string name="accept_and_continus">Accept and Continus</string>
     <string name="licens_guid">cd jd,ndf,f jkhdjkhsd jkhdskjhdskjd</string>
     <string name="title_activity_profile_activty">ProfileActivty</string>
+    <string name="sign_in">sign in</string>
+    <string name="authentification">Authentification</string>
+    <string name="login">login</string>
+    <string name="password">password</string>
 </resources>
