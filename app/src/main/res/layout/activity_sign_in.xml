@@ -81,8 +81,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="127dp"
-        android:layout_height="46dp"
+        android:layout_width="131dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/sign_in"
@@ -97,7 +97,9 @@
         android:background="@color/colorPrimary"
         android:textColor="@color/common_google_signin_btn_text_dark"
 
-        app:layout_constraintVertical_bias="0.507" />
+        app:layout_constraintVertical_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.501"
+        tools:layout_editor_absoluteX="128dp" />
 
 
 </android.support.constraint.ConstraintLayout>
