@@ -168,7 +168,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         marker = mMap.addMarker(markerWorker);
 
 
-
     }
 
     private Circle drawCircle(LatLng latLng) {
@@ -178,7 +177,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 .center(latLng)
                 .radius(1000)  //1 klm
                 .fillColor(0x333dc3ba)
-                .strokeColor(Color.argb(255,61,195,168))
+                .strokeColor(Color.argb(255, 61, 195, 168))
                 .strokeWidth(3);
 
         return mMap.addCircle(options);
@@ -218,8 +217,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             //mLocationRequest.setSmallestDisplacement(0.1F); //1/10 meter
 
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
-
-
 
 
         }
