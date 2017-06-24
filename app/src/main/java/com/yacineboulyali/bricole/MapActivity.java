@@ -3,6 +3,7 @@ package com.yacineboulyali.bricole;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -35,6 +36,8 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -151,6 +154,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         setMarker(locality, lat, lng);
     }
 */
+
+
+    Circle circle;
+
+
     private void setMarker(String locality, double lat, double lng) {
         MarkerOptions markerWorker = new MarkerOptions()
                 .title(locality)
@@ -158,7 +166,25 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))
                 .position(new LatLng(lat, lng));
         marker = mMap.addMarker(markerWorker);
+
+
+
     }
+
+    private Circle drawCircle(LatLng latLng) {
+
+
+        CircleOptions options = new CircleOptions()
+                .center(latLng)
+                .radius(1000)  //1 klm
+                .fillColor(0x333dc3ba)
+                .strokeColor(Color.argb(255,61,195,168))
+                .strokeWidth(3);
+
+        return mMap.addCircle(options);
+
+    }
+
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
@@ -170,7 +196,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 mGoogleApiClient);
-
 
 
         if (mLastLocation != null) {
@@ -186,7 +211,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             currLocationMarker = mMap.addMarker(markerUser);
 
 
-
             mLocationRequest = new LocationRequest();
             mLocationRequest.setInterval(5000); //5 seconds
             mLocationRequest.setFastestInterval(3000); //3 seconds
@@ -194,8 +218,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             //mLocationRequest.setSmallestDisplacement(0.1F); //1/10 meter
 
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
-        }
 
+
+
+
+        }
 
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -213,11 +240,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     }
 
     @Override
-    public void onConnectionSuspended(int i) {   }
+    public void onConnectionSuspended(int i) {
+    }
 
     @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {  }
-
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+    }
 
 
     @Override
@@ -229,17 +257,16 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             public boolean onMarkerClick(Marker marker) {
                 boolean status = false;
 
-                if(marker.getSnippet().equals("user")){
-                    status= true;
-                }
-                else if(marker.getSnippet().equals("worker")){
-                    status= false;
+                if (marker.getSnippet().equals("user")) {
+                    status = true;
+                } else if (marker.getSnippet().equals("worker")) {
+                    status = false;
                 }
                 return status;
             }
         });
-        setMarker("Yacine boulyalii",33.922082, -6.907914);
-        setMarker("Yacine boulyalii",33.919877, -6.931680);
+        setMarker("Yacine boulyalii", 33.922082, -6.907914);
+        setMarker("Yacine boulyalii", 33.919877, -6.931680);
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(LocationServices.API)
@@ -259,17 +286,17 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 public View getInfoContents(Marker marker) {
                     View view = getLayoutInflater().inflate(R.layout.list_user_view, null);
 
-                    ImageView user_image_profile = (ImageView)view.findViewById(R.id.user_image_profile);
-                    TextView user_name = (TextView)view.findViewById(R.id.user_name);
+                    ImageView user_image_profile = (ImageView) view.findViewById(R.id.user_image_profile);
+                    TextView user_name = (TextView) view.findViewById(R.id.user_name);
                     TextView user_job = (TextView) view.findViewById(R.id.user_job);
                     ImageView user_number = (ImageView) view.findViewById(R.id.user_number);
-                    Log.e("INFO","Test");
+                    Log.e("INFO", "Test");
                     user_name.setText(marker.getTitle());
 
                     user_number.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(getApplicationContext(),"tel icon clicked",Toast.LENGTH_SHORT);
+                            Toast.makeText(getApplicationContext(), "tel icon clicked", Toast.LENGTH_SHORT);
                         }
                     });
                     return view;
@@ -287,7 +314,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         } else {
             LatLng ll = new LatLng(location.getLatitude(), location.getLongitude());
 
-           // double lat = location.getLatitude();
+            // double lat = location.getLatitude();
             //double ln = location.getLongitude();
             //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ll,13));
             CameraPosition cameraPosition = new CameraPosition.Builder().target(ll).zoom(13).build();
@@ -298,8 +325,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             // goToLocationZoom(lat, ln,12);
             //place marker at current position
             //mMap.clear();
+
+
             if (currLocationMarker != null) {
                 currLocationMarker.remove();
+                circle.remove();
             }
             latLng = new LatLng(location.getLatitude(), location.getLongitude());
 
@@ -312,6 +342,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
             currLocationMarker = mMap.addMarker(markerPosition);
 
+            circle = drawCircle(latLng);
+
+
             //Toast.makeText(this,"Location Changed",Toast.LENGTH_SHORT).show();
 
 
@@ -319,8 +352,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         }
     }
-
-
 
 
 }
