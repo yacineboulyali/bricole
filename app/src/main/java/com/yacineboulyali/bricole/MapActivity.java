@@ -323,7 +323,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             //place marker at current position
             //mMap.clear();
 
-
             if (currLocationMarker != null) {
                 currLocationMarker.remove();
                 circle.remove();

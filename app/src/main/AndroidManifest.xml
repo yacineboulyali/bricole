@@ -51,11 +51,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MapActivity" />
         </activity>
+
+
+
         <activity android:name=".FulImageActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ProfileActivity" />
         </activity>
+
+
+
+
+
+
+
+
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SignInActivity">
 
