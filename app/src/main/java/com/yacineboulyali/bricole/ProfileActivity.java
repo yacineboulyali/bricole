@@ -26,16 +26,6 @@ public class ProfileActivity extends AppCompatActivity {
     GridView gridView;
 
 
-    public float ldpi;
-    public float mdpi;
-    public float hdpi;
-    public float xhdpi;
-    public float xxhdpi;
-    public float xxxhdpi;
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,53 +58,6 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-
-
-        ldpi= (float) 0.75;
-        mdpi= (float) 1.0;
-        hdpi= (float) 1.5;
-        xhdpi= (float) 2.0;
-        xxhdpi= (float) 3.0;
-        xxxhdpi= (float) 4.0;
-
-
-        double density = getResources().getDisplayMetrics().density ;
-
-
-
-
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
-            if (density==ldpi){
-                gridView.setNumColumns(2);
-
-            }else if (density==mdpi){
-
-            }else if (density==hdpi){
-
-            }else if (density==xhdpi){
-
-            }else if (density==xxhdpi){
-
-            }else if (density==xxxhdpi){
-                gridView.setNumColumns(4);
-
-            }
-            Toast.makeText(getApplicationContext(),String.valueOf(density),Toast.LENGTH_SHORT).show();
-        }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            gridView.setNumColumns(5);
-
-
-            if(density==mdpi){
-                gridView.setNumColumns(4);
-            }
-
-        }
-
-
-
-
-
-
 
 
     }
